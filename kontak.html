@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontak - Toko Bucket Bunga Cantik</title>
+
+  <!-- ================= CSS ================= -->
+  <style>
+    :root {
+      --primary: #d81b60;
+      --dark: #880e4f;
+      --light-bg: #fff4f8;
+      --dark-bg: #2b2b2b;
+      --light-text: #333;
+      --dark-text: #f8f8f8;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--light-bg);
+      color: var(--light-text);
+      transition: 0.3s;
+    }
+
+    header {
+      background-color: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background-color: var(--dark);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 14px 20px;
+    }
+
+    nav a:hover {
+      background-color: var(--primary);
+    }
+
+    section {
+      padding: 25px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: 2px solid var(--primary);
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: var(--primary);
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    footer {
+      text-align: center;
+      background-color: var(--primary);
+      color: white;
+      padding: 10px;
+      margin-top: 30px;
+    }
+
+    .toggle-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .dark-mode {
+      background-color: var(--dark-bg);
+      color: var(--dark-text);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Hubungi Kami</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Beranda</a>
+    <a href="produk.html">Produk</a>
+    <a href="kontak.html">Kontak</a>
+  </nav>
+
+  <section>
+    <h2>Isi Formulir</h2>
+
+    <form id="contactForm">
+      <input type="text" id="nama" placeholder="Nama Anda" required>
+      <input type="email" id="email" placeholder="Email Anda" required>
+      <textarea id="pesan" rows="4" placeholder="Isi pesan..." required></textarea>
+      <button type="submit">Kirim</button>
+      <p id="statusMsg" style="color:green;font-weight:bold;"></p>
+    </form>
+  </section>
+
+  <button class="toggle-btn" onclick="toggleDarkMode()">🌓</button>
+
+  <footer>
+    <p>© copyrigthriana</p>
+  </footer>
+
+  <!-- ================= JAVASCRIPT ================= -->
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+
+    const form = document.getElementById("contactForm");
+    const msg = document.getElementById("statusMsg");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      msg.textContent = "Pesan anda telah terkirim! 🌸";
+      form.reset();
+      setTimeout(() => msg.textContent = "", 3000);
+    });
+  </script>
+</body>
+</html>

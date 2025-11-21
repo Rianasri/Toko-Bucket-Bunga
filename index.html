@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beranda - Toko Bucket Bunga Cantik</title>
+
+  <!-- ================= CSS ================= -->
+  <style>
+    :root {
+      --primary: #d81b60;
+      --dark: #880e4f;
+      --light-bg: #fff4f8;
+      --dark-bg: #2b2b2b;
+      --light-text: #333;
+      --dark-text: #f8f8f8;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--light-bg);
+      color: var(--light-text);
+      transition: 0.3s;
+    }
+
+    header {
+      background-color: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background-color: var(--dark);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 14px 20px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background-color: var(--primary);
+      transform: scale(1.05);
+    }
+
+    section {
+      padding: 25px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      color: var(--primary);
+      border-bottom: 3px solid var(--primary);
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .beranda-gambar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .beranda-gambar img {
+      width: 100%;
+      max-width: 450px;
+      border-radius: 10px;
+    }
+
+    footer {
+      text-align: center;
+      background-color: var(--primary);
+      color: white;
+      padding: 10px;
+      margin-top: 30px;
+    }
+
+    .toggle-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: 0.3s;
+    }
+
+    .dark-mode {
+      background-color: var(--dark-bg);
+      color: var(--dark-text);
+    }
+
+    .dark-mode nav {
+      background-color: #111;
+    }
+
+    .dark-mode header {
+      background-color: #444;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Toko Bucket Bunga Cantik</h1>
+    <p>Hadiah terbaik untuk orang tersayang</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Beranda</a>
+    <a href="produk.html">Produk</a>
+    <a href="kontak.html">Kontak</a>
+  </nav>
+
+  <section>
+    <h2>Selamat Datang!</h2>
+    <p>
+      Bucket bunga adalah cara indah untuk menyampaikan perhatian dan kasih sayang.
+    </p>
+
+    <div class="beranda-gambar">
+      <img src="asset/semua jenis bunga.jpg" alt="Bucket Bunga">
+      <img src="asset/semua lagi.jpg" alt="Bucket Bunga">
+    </div>
+  </section>
+
+  <button class="toggle-btn" onclick="toggleDarkMode()">🌓</button>
+
+  <footer>
+    <p>© copyrigthriana</p>
+  </footer>
+
+  <!-- ================= JAVASCRIPT ================= -->
+  <script>
+    window.onload = () => {
+      alert("Selamat Datang");
+    };
+
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+      const btn = document.querySelector(".toggle-btn");
+      btn.textContent = document.body.classList.contains("dark-mode") ? "🌞" : "🌓";
+    }
+  </script>
+</body>
+</html>
